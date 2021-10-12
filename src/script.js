@@ -7,20 +7,22 @@ import hoverMenu from './makeHoverMenu';
     init() {
       this.parent = document.querySelector('#container');
       this.nav();
-      this.makeNewA();
+      this.appendA();
+      this.removeA();
     },
     nav() {
       this.navbar = nav();
       this.parent.appendChild(this.navbar);
       this.navDropDown = hoverMenu();
       console.log(this.navDropDown);
-      this.navbar.appendChild(this.navDropDown);
+      this.navbar.appendChild(this.navDropDown.makeTree());
     },
-    makeNewA() {
-      const newA = document.createElement('a');
-      newA.textContent = 'newLink';
-      newA.setAttribute('href', '#');
-      this.navDropDown.querySelector('.dropdown-content').appendChild(newA);
+    appendA() {
+      this.navDropDown.appendATagToDropdown('mything', '#');
+      this.navDropDown.appendATagToDropdown('lolxd', '#');
+    },
+    removeA() {
+      // this.navDropDown.removeDropdownItem('mything');
     },
   };
   return wrapper.init();
