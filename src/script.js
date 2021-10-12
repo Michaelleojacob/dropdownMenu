@@ -3,7 +3,7 @@ import nav from './navElement';
 import hoverMenu from './makeHoverMenu';
 
 (() => {
-  const wrapper = {
+  const app = {
     init() {
       this.parent = document.querySelector('#container');
       this.nav();
@@ -14,7 +14,6 @@ import hoverMenu from './makeHoverMenu';
       this.navbar = nav();
       this.parent.appendChild(this.navbar);
       this.navDropDown = hoverMenu();
-      console.log(this.navDropDown);
       this.navbar.appendChild(this.navDropDown.makeTree());
     },
     appendA() {
@@ -22,8 +21,8 @@ import hoverMenu from './makeHoverMenu';
       this.navDropDown.appendATagToDropdown('lolxd', '#');
     },
     removeA() {
-      // this.navDropDown.removeDropdownItem('mything');
+      this.navDropDown.removeDropdownItem('mything');
     },
   };
-  return wrapper.init();
+  return app.init();
 })();

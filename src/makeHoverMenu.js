@@ -38,18 +38,17 @@ export default function hoverMenu() {
     },
     appendATagToDropdown(str, link) {
       // TODO add logic for missing str or link.
+      const addClass = str.replace(/\s+/g, '');
       const newA = domManager({
         tagName: 'a',
         text: str,
+        classes: [addClass],
         attributes: [{ href: link }],
       });
       this.dropdownContent.appendChild(newA);
     },
-    removeDropdownItem(thing) {
-      this.dropdownContent.remove(thing);
-      // not sure how this would work.
-      // I think I would add a click to register which item to delete.
-      // delete button = delete this a tag
+    removeDropdownItem(targetClass) {
+      return this.dropdownContent.querySelector(`.${targetClass}`).remove();
     },
   };
   return my;
