@@ -2,7 +2,7 @@ import domManager from './domManager';
 
 export default function hoverMenu() {
   const my = {
-    makeTree(treeClass) {
+    makeTree(treestr, treeClass) {
       if (treeClass === undefined) {
         return console.log('makeTree needs a class argument');
       }
@@ -11,7 +11,7 @@ export default function hoverMenu() {
         children: [
           domManager({
             tagName: 'button',
-            text: 'dropdown',
+            text: treestr,
             classes: ['dropbtn'],
           }),
           domManager({

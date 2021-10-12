@@ -18,11 +18,11 @@ import hoverMenu from './makeHoverMenu';
     },
     dropdown1() {
       this.navDropDown = hoverMenu();
-      this.navbar.appendChild(this.navDropDown.makeTree('tree1'));
+      this.navbar.appendChild(this.navDropDown.makeTree('hover1', 'tree1'));
     },
     dropdown2() {
       this.secondDropdown = hoverMenu();
-      this.navbar.appendChild(this.secondDropdown.makeTree('tree2'));
+      this.navbar.appendChild(this.secondDropdown.makeTree('hover2', 'tree2'));
     },
     appendA() {
       this.navDropDown.appendATagToDropdown('mything', '#');
