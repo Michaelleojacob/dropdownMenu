@@ -7,14 +7,22 @@ import hoverMenu from './makeHoverMenu';
     init() {
       this.parent = document.querySelector('#container');
       this.nav();
+      this.dropdown1();
+      this.dropdown2();
       this.appendA();
       this.removeA();
     },
     nav() {
       this.navbar = nav();
       this.parent.appendChild(this.navbar);
+    },
+    dropdown1() {
       this.navDropDown = hoverMenu();
-      this.navbar.appendChild(this.navDropDown.makeTree());
+      this.navbar.appendChild(this.navDropDown.makeTree('tree1'));
+    },
+    dropdown2() {
+      this.secondDropdown = hoverMenu();
+      this.navbar.appendChild(this.secondDropdown.makeTree('tree2'));
     },
     appendA() {
       this.navDropDown.appendATagToDropdown('mything', '#');
