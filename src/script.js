@@ -1,6 +1,7 @@
 import './style.css';
 import nav from './navElement';
 import hoverMenu from './makeHoverMenu';
+import hoverobj from './hoverobj';
 
 (() => {
   const app = {
@@ -11,6 +12,7 @@ import hoverMenu from './makeHoverMenu';
       this.dropdown2();
       this.appendA();
       this.removeA();
+      this.testing();
     },
     nav() {
       this.navbar = nav();
@@ -30,6 +32,12 @@ import hoverMenu from './makeHoverMenu';
     },
     removeA() {
       this.navDropDown.removeDropdownItem('mything');
+    },
+    testing() {
+      const myobj = hoverobj();
+      const mytree = myobj.tree('button', 'myclass');
+      console.log(myobj);
+      console.log(mytree);
     },
   };
   return app.init();
